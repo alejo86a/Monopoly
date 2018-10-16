@@ -1,0 +1,28 @@
+<project default="run">
+    <target name="clean">
+      <delete dir="classes"/>
+      <delete dir="exe"/>
+
+	<mkdir dir="classes"/>
+	<mkdir dir="exe"/>
+
+	<touch file="classes/.gitkeep"/>
+	<touch file="exe/.gitkeep"/>
+    </target>
+
+    <target name="compile" depends="clean">
+	    <javac srcdir="sources" destdir="classes" encoding="utf8"/>
+    </target>
+
+    <target name="jar" depends="compile">
+	    <jar destfile="exe/Monopoly.jar" basedir="classes">
+		    <manifest>
+			    <attribute name="Main-Class" value="monopoly.gui.Plateau"/>
+		    </manifest>
+	    </jar>
+    </target>
+
+    <target name="run" depends="jar">
+	    <java jar="exe/Monopoly.jar" fork="true"/>
+    </target>
+</project>

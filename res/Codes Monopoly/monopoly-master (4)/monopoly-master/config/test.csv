@@ -1,0 +1,41 @@
+NUMÉRO;NOM;ÉVÉNEMENT;TYPE PROPRIÉTÉ;GROUPE;ACHAT;COÛT IMMOBILIER;LOYERS 
+1;Départ;recette,20000;;;;;
+2;Boulevard de Belleville;;terrain;mauve;6000;5000;200,1000,3000,9000,16000,25000
+3;Caisse de communauté;carte,CC;;;;;
+4;Rue Lecourbe;;terrain;mauve;6000;5000;400,2000,6000,18000,32000,45000
+5;Impôts sur le revenu;dépense,2000000;;;;;
+6;Gare Montparnasse;;monopole;gares;20000;;2500
+7;Rue de Vaugirard;;terrain;bleu ciel;10000;5000;600,3000,9000,27000,40000,55000
+8;Chance;carte,chance;;;;;
+9;Rue de Courcelles;;terrain;bleu ciel;10000;5000;600,3000,9000,27000,40000,55000
+10;Avenue de la République;;terrain;bleu ciel;12000;5000;800,4000,10000,30000,45000,60000
+11;Prison;;;;;;
+12;Boulevard de la Villette;;terrain;violet;14000;10000;1000,5000,15000,45000,62500,75000
+13;Compagnie de distribution d'électricité;;monopole;compagnies;15000;;
+14;Avenue de Neuilly;;terrain;violet;14000;10000;1000,5000,15000,45000,62500,75000
+15;Rue de Paradis;;terrain;violet;16000;10000;1200,6000,18000,50000,70000,90000
+16;Gare de Lyon;;monopole;gares;20000;;2500
+17;Avenue Mozart;;terrain;orange;18000;10000;1400,7000,20000,55000,75000,95000
+18;Caisse de communauté;carte,CC;;;;;
+19;Boulevard Saint-Michel;;terrain;orange;18000;10000;1400,7000,20000,55000,75000,95000
+20;Place Pigalle;;terrain;orange;20000;10000;1600,8000,22000,60000,80000,100000
+21;Parc gratuit;;;;;;
+22;Avenue Montaigne;;terrain;rouge;22000;15000;1800,9000,25000,70000,87500,105000
+23;Chance;carte,chance;;;;;
+24;Boulevard Malesherbes;;terrain;rouge;22000;15000;1800,9000,25000,70000,87500,105000
+25;Avenue Henri-Martin;;terrain;rouge;24000;15000;2000,10000,30000,75000,92500,110000
+26;Gare du Nord;;monopole;gares;20000;;2500
+27;Faubourg Saint-Honoré;;terrain;jaune;26000;15000;2200,11000,33000,80000,97500,115000
+28;Place de la Bourse;;terrain;jaune;26000;15000;2200,11000,33000,80000,97500,115000
+29;Compagnie de Distribution des Eaux;;monopole;compagnies;15000;;
+30;Rue La Fayette;;terrain;jaune;28000;15000;2400,12000,36000,85000,102500,120000
+31;Allez en prison;prison;;;;;
+32;Avenue de Breteuil;;terrain;vert;30000;20000;2600,13000,39000,90000,110000,127500
+33;Avenue Foch;;terrain;vert;30000;20000;2600,13000,39000,90000,110000,127500
+34;Caisse de communauté;carte,CC;;;;;
+35;Boulevard des Capucines;;terrain;vert;32000;20000;2800,15000,45000,100000,120000,140000
+36;Gare Saint-Lazare;;monopole;gares;20000;;2500
+37;Chance;carte,chance;;;;
+38;Avenue des Champs-Elysées;;terrain;bleu roi;35000;20000;3500,17500,50000,110000,130000,150000
+39;Taxe de luxe;dépense,10000;;;;;
+40;Rue de la Paix;;terrain;bleu roi;40000;20000;5000,20000,60000,140000,170000,200000
