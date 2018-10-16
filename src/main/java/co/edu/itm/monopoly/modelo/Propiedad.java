@@ -47,4 +47,16 @@ public class Propiedad extends Patrimonio {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Propiedad{" +
+				"color='" + color + '\'' +
+				", hipoteca=" + hipoteca +
+				", hipotecada=" + hipotecada +
+				", hotel=" + hotel +
+				", nroCasa=" + nroCasa +
+				", valorCasa=" + valorCasa +
+				", valorHotel=" + valorHotel +
+				'}';
+	}
 }

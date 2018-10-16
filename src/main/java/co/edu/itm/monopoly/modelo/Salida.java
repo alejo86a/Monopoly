@@ -21,4 +21,6 @@ public class Salida extends Casilla {
 		super.finalize();
 	}
 
+
+
 }

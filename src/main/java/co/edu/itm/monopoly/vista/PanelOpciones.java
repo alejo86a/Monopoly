@@ -10,7 +10,7 @@ public class PanelOpciones extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelOpciones() {
-		setBackground(Color.black);
+		setBackground(Color.red);
 		this.setBounds(0, 0, 299, 768);	
 		this.setVisible(true);
 		
