@@ -19,15 +19,20 @@ public class ControladorTablero {
 	public Jugador jugador1;
 	protected PanelTablero panelTablero;
 
+	private JLabel [] imgJugadores;
 	private JLabel imgTablero;
-	private JLabel imgJugador;
 	private JLabel resulDado1;
 	private JLabel resulDado2;
 	private JButton btnDado;
+	private int jugadorActivo;
 	
 	public ControladorTablero(){
+		jugadorActivo = 0;
 		imgTablero = new JLabel(new ImageIcon("res/monopoly-medellin.jpg"));
-		imgJugador = new JLabel(new ImageIcon("res/jugador.png"));
+		imgJugadores = new JLabel [4];
+		for (int i = 0; i < 4; i++) {
+			imgJugadores[i] = new JLabel(new ImageIcon("res/jugador-"+(i+1)+".png"));
+		}
 		resulDado1 = new JLabel();
 		resulDado2 = new JLabel();
 		btnDado = new JButton("lanzarDados");
@@ -35,7 +40,7 @@ public class ControladorTablero {
 
 		panelTablero = new PanelTablero(
 				imgTablero,
-				imgJugador,
+				imgJugadores,
 				resulDado1,
 				resulDado2,
 				btnDado);
@@ -52,8 +57,8 @@ public class ControladorTablero {
 				int valor[] = lanzarDado();
 				resulDado1.setText(String.valueOf(valor[0]));
 				resulDado2.setText(String.valueOf(valor[1]));
-				imgJugador.setBounds(valor[2], valor[3], 50, 50);
-
+				imgJugadores[jugadorActivo].setBounds(valor[2], valor[3], 50, 50);
+				jugadorActivo = (jugadorActivo+1)%4;
 			}
 		});
 

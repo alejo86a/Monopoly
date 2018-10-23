@@ -20,7 +20,7 @@ public class PanelTablero extends JPanel {
 	
 	public PanelTablero(
 			JLabel imgTablero,
-			JLabel imgJugador,
+			JLabel [] imgJugadores,
 			JLabel resulDado1,
 			JLabel resulDado2,
 			JButton btnDado) {
@@ -28,8 +28,10 @@ public class PanelTablero extends JPanel {
 		setBounds(299,0,768,768);
 		setLayout(null);
 
-		imgJugador.setBounds(715, 718, 50, 50);
-		add(imgJugador);
+		for (int i = 0; i < imgJugadores.length; i++) {
+			imgJugadores[i].setBounds(715, 718, 50, 50);
+			add(imgJugadores[i]);
+		}
 		//-------------------------------------------
 		resulDado1.setBounds(324,299,80,70);
 		resulDado1.setFont(new java.awt.Font("Arial", 0, 40));
