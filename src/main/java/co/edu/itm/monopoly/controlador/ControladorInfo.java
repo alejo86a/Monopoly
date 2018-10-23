@@ -26,13 +26,13 @@ public class ControladorInfo {
 
 	}
 	
-	public void llenarNombreJugadores(String nombres[]){
+	public void llenarNombreJugadores(String nombres[], int cantidadNombres){
         labelNombre[0] = lblJugador1;
         labelNombre[1] = lblJugador2;
         labelNombre[2] = lblJugador3;
         labelNombre[3] = lblJugador4;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < cantidadNombres; i++) {
             labelNombre[i].setText(nombres[i]);
         }
 	}
