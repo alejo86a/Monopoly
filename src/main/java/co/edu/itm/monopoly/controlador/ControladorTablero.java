@@ -73,9 +73,10 @@ public class ControladorTablero {
 
 	}
 
-	public void setNumeroJugadores(int totalJugadores) {
+	public void setNumeroJugadores(int totalJugadores, String[] nombres) {
 		this.numeroJugadores = totalJugadores;
 		for (int i = totalJugadores; i < imgJugadores.length; i++) {
+		    jugadores[i].setNombre(nombres[i]);
 			imgJugadores[i].setVisible(false);
 		}
 	}
@@ -101,7 +102,7 @@ public class ControladorTablero {
 	private void printInfoCasilla(int resultadoDado[]) {
 		System.out.println("jugador: "+jugadorActivo);
 		System.out.println("--posicion--");
-		System.out.println(casillas.retornaPorPosicion(jugadores[jugadorActivo].getPosicion()));
+		System.out.println(jugadores[jugadorActivo]);
 		System.out.println("-------------------------------------");
 	}
 	

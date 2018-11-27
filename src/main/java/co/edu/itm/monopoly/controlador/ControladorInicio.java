@@ -69,7 +69,7 @@ public class ControladorInicio {
 				if(sonCuatro){
 					nombres[3] = nombreJ4.getText();
 				}
-				ctrlTablero.setNumeroJugadores(cantidadNombres);
+				ctrlTablero.setNumeroJugadores(cantidadNombres, nombres);
 				EnviarNombres(nombres);
 			}
 		});
