@@ -18,6 +18,9 @@ public class ControladorOpc {
     private JLabel valorHipoteca;
     private JLabel valorCasa;
     private JLabel valorHotel;
+
+    private JButton btnComprar;
+    private JButton btnPagar;
 	
 	public ControladorOpc(){
 		imgTablero = new JLabel(new ImageIcon("res/Casillas/Casilla.jpg"));
@@ -25,7 +28,10 @@ public class ControladorOpc {
 		lblNombreCasilla = new JLabel("Salida");
 		initPanelCasilla();
 
-		panelOpc = new PanelOpciones(imgTablero, lblNombreCasilla, titulo, jpanelCasilla);
+		btnComprar = new JButton("Comprar");
+		btnPagar = new JButton("Pagar");
+
+		panelOpc = new PanelOpciones(imgTablero, lblNombreCasilla, titulo, jpanelCasilla, btnComprar, btnPagar);
 		panelOpc.setVisible(true);
 	}
 
@@ -34,15 +40,17 @@ public class ControladorOpc {
 	    if(casilla instanceof Propiedad) {
             setCasillaColor(((Propiedad)casilla).getColor());
             setValoresPanelCasilla((Propiedad) casilla);
+            jpanelCasilla.setVisible(true);
         } else {
 	        setCasillaColor("white");
+	        jpanelCasilla.setVisible(false);
         }
 	}
 
 	private void initPanelCasilla() {
         Font font = new Font("Courier", Font.BOLD, 12);
         jpanelCasilla = new JPanel();
-        jpanelCasilla.setPreferredSize(new Dimension(299, 900));
+        jpanelCasilla.setPreferredSize(new Dimension(299, 350));
 	    rentas = new JLabel[6];
         valorHipoteca = new JLabel("");
         valorCasa = new JLabel("");

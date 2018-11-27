@@ -13,7 +13,9 @@ public class PanelOpciones extends JPanel {
 			JLabel imgCasilla,
 			JLabel lblNombreCasilla,
 			JPanel titulo,
-			JPanel body
+			JPanel body,
+			JButton comprar,
+			JButton pagar
 	) {
 		this.setBounds(0, 0, 299, 768);	
 		this.setVisible(true);
@@ -36,6 +38,12 @@ public class PanelOpciones extends JPanel {
 		add(titulo);
 
 		add(body);
+
+
+		comprar.setBackground(Color.GREEN);
+		pagar.setBackground(Color.RED);
+		add(comprar);
+		add(pagar);
 		
 	}
 
