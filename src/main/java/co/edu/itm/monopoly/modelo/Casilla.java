@@ -15,6 +15,8 @@ public abstract class Casilla {
 		
 	}
 
+	public abstract String getNombreCasilla();
+
 	public int getX() {
 		return x;
 	}

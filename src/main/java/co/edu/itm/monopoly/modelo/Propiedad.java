@@ -1,5 +1,7 @@
 package co.edu.itm.monopoly.modelo;
 
+import java.util.Arrays;
+
 /**
  * @author alejandro
  * @version 1.0
@@ -47,16 +49,51 @@ public class Propiedad extends Patrimonio {
 
 	}
 
+	public String getColor() {
+		return color;
+	}
+
+	public int getHipoteca() {
+		return hipoteca;
+	}
+
+	public boolean isHipotecada() {
+		return hipotecada;
+	}
+
+	public boolean isHotel() {
+		return hotel;
+	}
+
+	public int getNroCasa() {
+		return nroCasa;
+	}
+
+	public int getValorCasa() {
+		return valorCasa;
+	}
+
+	public int getValorHotel() {
+		return valorHotel;
+	}
+
 	@Override
 	public String toString() {
 		return "Propiedad{" +
-				"color='" + color + '\'' +
+				"nombre='" + nombre + '\'' +
+				", precio=" + precio +
+				", renta=" + Arrays.toString(renta) +
+				", propietario=" + this.getPropietario() +
+				", color='" + color + '\'' +
 				", hipoteca=" + hipoteca +
 				", hipotecada=" + hipotecada +
 				", hotel=" + hotel +
 				", nroCasa=" + nroCasa +
 				", valorCasa=" + valorCasa +
 				", valorHotel=" + valorHotel +
+				", numero=" + numero +
+				", x=" + x +
+				", y=" + y +
 				'}';
 	}
 }

@@ -13,6 +13,10 @@ public class Carcel extends Casilla {
 
 	}
 
+	public String getNombreCasilla() {
+		return "Carcel";
+	}
+
 	public void acumularImpuesto(int impuesto){
 		acumuladoImpuestos+= impuesto;
 	}
@@ -21,4 +25,13 @@ public class Carcel extends Casilla {
 		return acumuladoImpuestos;
 	}
 
+	@Override
+	public String toString() {
+		return "Carcel{" +
+				"numero=" + numero +
+				", x=" + x +
+				", y=" + y +
+				", acumuladoImpuestos=" + acumuladoImpuestos +
+				'}';
+	}
 }

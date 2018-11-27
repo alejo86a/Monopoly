@@ -16,6 +16,10 @@ public class Impuesto extends Casilla {
 		this.y= y;
 	}
 
+	public String getNombreCasilla() {
+		return "Impuesto";
+	}
+
 	/**
 	 * 
 	 * @param patrimono []
@@ -28,4 +32,13 @@ public class Impuesto extends Casilla {
 		return 0;
 	}
 
+	@Override
+	public String toString() {
+		return "Impuesto{" +
+				"nombre='" + nombre + '\'' +
+				", numero=" + numero +
+				", x=" + x +
+				", y=" + y +
+				'}';
+	}
 }
