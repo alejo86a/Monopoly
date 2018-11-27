@@ -11,6 +11,10 @@ public class Salida extends Casilla {
 
 	private int cantidadAPagar;
 
+	public String getNombreCasilla() {
+		return "Salida";
+	}
+
 	public Salida(int numero,int x, int y){
 		this.numero = numero;
 		this.x = x;

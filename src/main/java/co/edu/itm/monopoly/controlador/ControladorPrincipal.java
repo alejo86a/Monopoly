@@ -14,9 +14,9 @@ public class ControladorPrincipal {
 	
 	public ControladorPrincipal(){
         ctrlInfo = new ControladorInfo();
-		ctrlTablero = new ControladorTablero();
-        ctrlInicio = new ControladorInicio(this.ctrlInicio, this.ctrlInfo, this.ctrlTablero);
 		ctrlOpc =  new ControladorOpc();
+		ctrlTablero = new ControladorTablero(this.ctrlInfo, this.ctrlOpc);
+        ctrlInicio = new ControladorInicio(this.ctrlInicio, this.ctrlInfo, this.ctrlTablero);
 
 		frameContenedor = new JFrame();
 

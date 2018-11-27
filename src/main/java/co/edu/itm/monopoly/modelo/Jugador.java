@@ -1,5 +1,7 @@
 package co.edu.itm.monopoly.modelo;
 
+import java.util.Arrays;
+
 /**
  * @author alejandro
  * @version 1.0
@@ -75,4 +77,20 @@ public class Jugador {
 		return this.posicion;
 	}
 
+	@Override
+	public String toString() {
+		return "Jugador{" +
+				"dado=" + dado +
+				", dinero=" + dinero +
+				", nombre='" + nombre + '\'' +
+				", patrimonio=" + Arrays.toString(patrimonio) +
+				", posicion=" + posicion +
+				", tarjeta=" + tarjeta +
+				", turno=" + turno +
+				", x=" + x +
+				", y=" + y +
+				", vecesEnCarcel=" + vecesEnCarcel +
+				", lanzamientoPar=" + lanzamientoPar +
+				'}';
+	}
 }

@@ -13,6 +13,10 @@ public class TarArcaComunal extends Casilla implements ITarjeta {
 		this.y = y;
 	}
 
+	public String getNombreCasilla() {
+		return "Arca Comunal";
+	}
+
 	public void finalize() throws Throwable {
 		super.finalize();
 	}

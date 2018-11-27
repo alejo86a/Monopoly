@@ -1,7 +1,5 @@
 package co.edu.itm.monopoly.controlador;
 
-
-import ch.qos.logback.core.net.SyslogOutputStream;
 import co.edu.itm.monopoly.modelo.Casilla;
 import co.edu.itm.monopoly.modelo.Dado;
 import co.edu.itm.monopoly.modelo.Jugador;
@@ -17,6 +15,8 @@ public class ControladorTablero {
 	public Tablero casillas;
 	public Dado dado;
 	public Jugador [] jugadores;
+	private ControladorOpc ctrlOpc;
+	private ControladorInfo ctrlInfo;
 	protected PanelTablero panelTablero;
 
 	private JLabel [] imgJugadores;
@@ -27,7 +27,10 @@ public class ControladorTablero {
 	private int jugadorActivo;
 	private int numeroJugadores;
 	
-	public ControladorTablero(){
+	public ControladorTablero(ControladorInfo ctrlInfo, ControladorOpc ctrlOpc){
+		this.ctrlInfo = ctrlInfo;
+		this.ctrlOpc = ctrlOpc;
+
 		jugadorActivo = 0;
 		numeroJugadores = 4;
 		imgTablero = new JLabel(new ImageIcon("res/monopoly-medellin.jpg"));
@@ -58,6 +61,9 @@ public class ControladorTablero {
 		btnDado.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int valor[] = lanzarDado();
+				printInfoCasilla(valor);
+				moverJugador(valor);
+				ctrlOpc.setCasilla(casillas.retornaPorPosicion(jugadores[jugadorActivo].getPosicion()));
 				resulDado1.setText(String.valueOf(valor[0]));
 				resulDado2.setText(String.valueOf(valor[1]));
 				imgJugadores[jugadorActivo].setBounds(valor[2], valor[3], 50, 50);
@@ -65,26 +71,6 @@ public class ControladorTablero {
 			}
 		});
 
-	}
-	
-	public int[] lanzarDado(){
-		int resultadoDado [] = new int [4];
-		int dadoAux [];
-		dadoAux = dado.lanzarDados();
-		resultadoDado[0] = dadoAux [0];
-		resultadoDado[1] = dadoAux [1];
-		Casilla aux = casillas.retornaPorPosicion((jugadores[jugadorActivo].getPosicion()+resultadoDado[0]+resultadoDado[1])%39);
-		System.out.println("jugador: "+jugadorActivo);
-		System.out.println("--casilla--");
-		System.out.println("#"+(jugadores[jugadorActivo].getPosicion()+resultadoDado[0]+resultadoDado[1])%39+"-"+aux.toString());
-		System.out.println("--posicion--");
-		System.out.println(casillas.retornaPorPosicion(jugadores[jugadorActivo].getPosicion()));
-		System.out.println("-------------------------------------");
-		resultadoDado[2] = aux.getX();
-		resultadoDado [3] = aux.getY();
-		jugadores[jugadorActivo].setPosicionXY(resultadoDado [2],resultadoDado[3]);
-		jugadores[jugadorActivo].setPosicion((jugadores[jugadorActivo].getPosicion()+resultadoDado[0]+resultadoDado[1])%39);
-		return resultadoDado;
 	}
 
 	public void setNumeroJugadores(int totalJugadores) {
@@ -94,5 +80,29 @@ public class ControladorTablero {
 		}
 	}
 	
+	private int[] lanzarDado(){
+		int resultadoDado [] = new int [4];
+		int dadoAux [];
+		dadoAux = dado.lanzarDados();
+		resultadoDado[0] = dadoAux [0];
+		resultadoDado[1] = dadoAux [1];
+		return resultadoDado;
+	}
+
+	private void moverJugador(int resultadoDado[]) {
+		Casilla aux = casillas.retornaPorPosicion((jugadores[jugadorActivo].getPosicion()+resultadoDado[0]+resultadoDado[1])%39);
+
+		resultadoDado[2] = aux.getX();
+		resultadoDado [3] = aux.getY();
+		jugadores[jugadorActivo].setPosicionXY(resultadoDado [2],resultadoDado[3]);
+		jugadores[jugadorActivo].setPosicion((jugadores[jugadorActivo].getPosicion()+resultadoDado[0]+resultadoDado[1])%39);
+	}
+
+	private void printInfoCasilla(int resultadoDado[]) {
+		System.out.println("jugador: "+jugadorActivo);
+		System.out.println("--posicion--");
+		System.out.println(casillas.retornaPorPosicion(jugadores[jugadorActivo].getPosicion()));
+		System.out.println("-------------------------------------");
+	}
 	
 }
